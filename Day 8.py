@@ -35,10 +35,6 @@
 #          b
 # This tree has 5 unival subtrees: the leaf at 'c', and every 'b'.
 
-# We can start off by first writing a function that checks whether a tree is unival or not. Then, perhaps we could use this to count up all the nodes in the tree.
-
-# To check whether a tree is a unival tree, we must check that every node in the tree has the same value. To start off, we could define an is_unival function that takes in a root to a tree. We would do this recursively with a helper function. Recall that a leaf qualifies as a unival tree.
-
 def is_unival(root):
     return unival_helper(root, root.value)
 
@@ -48,8 +44,6 @@ def unival_helper(root, value):
     if root.value == value:
         return unival_helper(root.left, value) and unival_helper(root.right, value)
     return False
-
-# And then our function that counts the number of subtrees could simply use that function:
 
 def count_unival_subtrees(root):
     if root is None:

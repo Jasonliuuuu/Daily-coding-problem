@@ -22,7 +22,6 @@ def two_sum(lst, k):
         seen.add(num)
     return False
 
-# Yet another solution involves sorting the list. We can then iterate through the list and run a binary search on K - lst[i]. Since we run binary search on N elements, this would take O(N log N) with O(1) space.
 
 from bisect import bisect_left
 
@@ -34,9 +33,7 @@ def two_sum(lst, K):
         target = K - lst[i]
         j = binary_search(lst, target)
 
-        # Check that binary search found the target and that it's not in the same index
-        # as i. If it is in the same index, we can check lst[i + 1] and lst[i - 1] to see
-        #  if there's another number that's the same value as lst[i].
+        
         if j == -1:
             continue
         elif j != i:
